@@ -1,0 +1,69 @@
+info:
+  name: Teste Recebimento 2
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://cscfsmtst.avcweb.com.br/FSMServerTST/OData/perform_inbound_integration
+  body:
+    type: json
+    data: |-
+      {
+        "parameters": {
+          "mapping_name": "C_INBOUND_SALDO_DE_ESTOQUE",
+          "xml_import": {
+            "inbound": {
+              "receiving": {
+                "created_by": "USU_INTEGRA",
+                "place_id_rcvd_to": "2001_0111",
+                "inventory_adjusted": "N",
+                "user_def1": 4905271767,
+                "user_def2": 2026,
+                "receiving_type": "MISC",
+                "user_def4": "Envio SAP-WFM",
+                "receiving_detail": [
+                  {
+                    "user_def5": "2001_0007",
+                    "user_def3": "0001",
+                    "close_short": "N",
+                    "created_by": "USU_INTEGRA",
+                    "inventory_adjusted": "N",
+                    "item_id": 27184,
+                    "location_to": "DISPONIVEIS",
+                    "usable": "Y",
+                    "receiving_unit": {
+                      "part_id": 27184,
+                      "serial_id": "10006067          ",
+                      "quantity": "1"
+                    }
+                  },
+                  {
+                    "user_def5": "2001_0007",
+                    "user_def3": "0002",
+                    "close_short": "N",
+                    "created_by": "USU_INTEGRA",
+                    "inventory_adjusted": "N",
+                    "item_id": 13625,
+                    "location_to": "DISPONIVEIS",
+                    "usable": "Y",
+                    "receiving_unit": {
+                      "part_id": 13625,
+                      "serial_id": null,
+                      "quantity": "1.000 "
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
